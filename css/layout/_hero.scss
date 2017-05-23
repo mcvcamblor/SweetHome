@@ -1,0 +1,15 @@
+.hero{
+  width: 100%;
+  height: 600px;
+  background-image: url("../img/img-hero.jpg");
+  display: flex;
+  flex-direction: column;
+}
+
+.hero img{
+  width: 100%;
+}
+
+.text-hero{
+  width: 600px;
+}
