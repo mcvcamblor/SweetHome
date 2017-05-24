@@ -216,7 +216,8 @@ body {
   width: 100%; }
 
 .section-img img {
-  width: 100%; }
+  width: 100%;
+  vertical-align: bottom; }
 
 .comic-img-text {
   display: -webkit-box;
