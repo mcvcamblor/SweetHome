@@ -1,0 +1,26 @@
+.mapa-interactivo{
+  width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+.holi{
+  width: 700px;
+  position: absolute;
+  z-index: -1;
+}
+
+.holi img{
+  width: 100%;
+}
+
+.select{
+  position: absolute;
+  display: flex;
+  width: 300px;
+  background-color: #405B60;
+  flex-direction: column;
+  color: white;
+  font-family: sans-serif;
+  padding: 20px;
+  top: 20px;
+}

@@ -1,0 +1,43 @@
+.section-six{
+  background-color: $color-section-gray;
+}
+
+.wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item{
+  padding: 30px;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gray1{
+  background-color: #e8f1f5;
+}
+
+.gray2{
+  background-color: #dbe6ea;
+}
+
+.icon{
+  width: 10%;
+}
+
+.text{
+  width: 87%;
+}
+
+.icon img{
+  width: 100%;
+}
+
+.item h3{
+  margin: 0;
+}
+
+.item p{
+  margin: 0;
+}
