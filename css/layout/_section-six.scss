@@ -7,27 +7,29 @@
   flex-wrap: wrap;
 }
 
+.wrap:last-child{
+  border-bottom: 1px solid $color-footer;
+}
+
 .item{
   padding: 30px;
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-}
-
-.gray1{
-  background-color: #e8f1f5;
-}
-
-.gray2{
-  background-color: #dbe6ea;
+  align-items: center;
+  border-top: 1px solid $color-footer;
 }
 
 .icon{
-  width: 10%;
+  width: 20%;
+}
+
+.text-left{
+  order: -1;
 }
 
 .text{
-  width: 87%;
+  width: 78%;
 }
 
 .icon img{
