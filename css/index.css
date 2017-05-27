@@ -486,7 +486,7 @@ input[type='range']::-webkit-slider-thumb {
   margin: 0;
   font-size: 12px;
   font-weight: 700;
-  cursor: pointer; }
+  color: black; }
 
 .author-image-white {
   position: absolute;
@@ -515,8 +515,7 @@ input[type='range']::-webkit-slider-thumb {
   text-align: right; }
 
 a.white-author:hover {
-  text-decoration: underline;
-  cursor: pointer; }
+  text-decoration: underline; }
 
 .comic-img-text {
   display: -webkit-box;
