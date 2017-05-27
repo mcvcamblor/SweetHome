@@ -1,19 +1,20 @@
-.mapa-interactivo{
-  width: 700px;
+.interactive-map-section{
+  width: 800px;
   margin: 0 auto;
   position: relative;
 }
-.holi{
-  width: 700px;
+
+.total-map{
+  width: 100%;
   position: absolute;
   z-index: -1;
 }
 
-.holi img{
+.total-map img{
   width: 100%;
 }
 
-.select{
+.selection-map{
   position: absolute;
   display: flex;
   width: 300px;
