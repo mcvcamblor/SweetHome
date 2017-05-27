@@ -179,8 +179,13 @@ body {
 .main {
   width: 100%; }
 
+.section-text-space {
+  width: 100%;
+  padding: 50px 0; }
+
 .section-text {
-  padding: 50px 30%; }
+  width: 650px;
+  margin: 0 auto; }
 
 .section-one {
   background-color: #f1f8fb; }
@@ -320,7 +325,7 @@ body {
   width: 100%; }
 
 .share-media {
-  margin: 80px 0; }
+  margin: 50px 0; }
 
 .icons-media {
   display: -webkit-box;
@@ -352,9 +357,10 @@ body {
 .icons-media a:hover .color-icon {
   fill: #eb9512; }
 
+.section-appreciation {
+  background-color: #144a5c; }
+
 .appreciation {
-  background-color: #144a5c;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -366,11 +372,12 @@ body {
 
 .team-link {
   color: white;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s; }
+  -webkit-transition: color 0.5s, text-decoration 0.5s;
+  transition: color 0.5s, text-decoration 0.5s; }
 
 .team-link:hover {
-  opacity: 0.7; }
+  color: #eb9512;
+  text-decoration: underline; }
 
 .greetings {
   width: 60%; }
