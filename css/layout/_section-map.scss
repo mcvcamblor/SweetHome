@@ -4,6 +4,17 @@
   position: relative;
 }
 
+.map-madrid{
+  width: 100%;
+  transition: opacity 0.5s;
+}
+
+.map-barcelona{
+  width: 100%;
+  position: absolute;
+  transition: opacity 0.5s;
+}
+
 .total-map{
   width: 100%;
   position: absolute;
@@ -17,11 +28,81 @@
 .selection-map{
   position: absolute;
   display: flex;
+  justify-content: center;
   width: 300px;
-  background-color: #405B60;
+  background-color: #144a5c;
   flex-direction: column;
   color: white;
   font-family: sans-serif;
-  padding: 20px;
+  padding-top: 20px;
   top: 20px;
+  left: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+}
+
+.text-selection-map{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.cities-selection{
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-city{
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px 25px;
+  color: white;
+  background-color: transparent;
+  outline: 0;
+  cursor: pointer;
+}
+
+.title-home-selector{
+  margin-top: 15px;
+}
+
+.home-selector{
+  margin: 2px 0;
+}
+
+.rental-percentage{
+  width: 100%;
+  display: flex;
+}
+
+.unit-percentage{
+  width: 17%;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 5px 0;
+}
+
+.unit-30{
+  background-color: #55790e;
+}
+
+.unit-31{
+  background-color: #7b8815;
+}
+
+.unit-36{
+  background-color: #d6a500;
+}
+
+.unit-41{
+  background-color: #bc6c25;
+}
+
+.unit-46{
+  background-color: #94341c;
+}
+
+.unit-50{
+  background-color: #6e1c0f;
 }

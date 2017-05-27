@@ -55,6 +55,11 @@ body {
   font-size: 22px;
   font-family: "Roboto Condensed", sans-serif; }
 
+.title-map-selector {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px; }
+
 .text-comic {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 30px; }
@@ -330,6 +335,17 @@ input[type='range']::-webkit-slider-thumb {
   margin: 0 auto;
   position: relative; }
 
+.map-madrid {
+  width: 100%;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s; }
+
+.map-barcelona {
+  width: 100%;
+  position: absolute;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s; }
+
 .total-map {
   width: 100%;
   position: absolute;
@@ -343,16 +359,88 @@ input[type='range']::-webkit-slider-thumb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 300px;
-  background-color: #405B60;
+  background-color: #144a5c;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   color: white;
   font-family: sans-serif;
-  padding: 20px;
-  top: 20px; }
+  padding-top: 20px;
+  top: 20px;
+  left: 20px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+          box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75); }
+
+.text-selection-map {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 20px; }
+
+.cities-selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.btn-city {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px 25px;
+  color: white;
+  background-color: transparent;
+  outline: 0;
+  cursor: pointer; }
+
+.title-home-selector {
+  margin-top: 15px; }
+
+.home-selector {
+  margin: 2px 0; }
+
+.rental-percentage {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.unit-percentage {
+  width: 17%;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 5px 0; }
+
+.unit-30 {
+  background-color: #55790e; }
+
+.unit-31 {
+  background-color: #7b8815; }
+
+.unit-36 {
+  background-color: #d6a500; }
+
+.unit-41 {
+  background-color: #bc6c25; }
+
+.unit-46 {
+  background-color: #94341c; }
+
+.unit-50 {
+  background-color: #6e1c0f; }
 
 .info-squares {
   display: -webkit-box;
@@ -538,5 +626,15 @@ input[type='range']::-webkit-slider-thumb {
 
 .uppercase {
   text-transform: uppercase; }
+
+.btn-focus {
+  background-color: white;
+  color: #144a5c; }
+
+.on {
+  opacity: 1; }
+
+.off {
+  opacity: 0; }
 
 /*# sourceMappingURL=index.css.map */
