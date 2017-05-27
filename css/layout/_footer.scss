@@ -1,21 +1,61 @@
 .footer{
   width: 100%;
-  padding-top: 30px;
 }
 
 .share-media{
+  margin: 50px 0;
+}
 
+.icons-media{
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.icons-media a{
+  width: 60px;
+  height: 60px;
+  padding: 15px;
+  border-radius: 50%;
+  border: 2px solid $color-footer;
+  transition: border-color 0.5s;
+}
+
+.icons-media a:hover{
+  border-color: $color-section-orange;
+}
+
+.color-icon{
+  fill: $color-footer;
+  transition: fill 0.5s;
+}
+
+.icons-media a:hover .color-icon{
+  fill: $color-section-orange;
+}
+
+.section-appreciation{
+  background-color: $color-footer;
 }
 
 .appreciation{
-  background-color: $color-footer;
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
 
 .team{
   width: 40%;
+}
+
+.team-link{
+  color: white;
+  transition: color 0.5s, text-decoration 0.5s;
+}
+
+.team-link:hover{
+  color: $color-section-orange;
+  text-decoration: underline;
 }
 
 .greetings{

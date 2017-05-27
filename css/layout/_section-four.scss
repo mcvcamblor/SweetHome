@@ -1,9 +1,10 @@
 .comic-img-text{
   display: flex;
+  align-items: center;
 }
 
 .img-comic{
-  width: 50%;
+  width: 60%;
 }
 
 .img-comic img{
@@ -11,5 +12,5 @@
 }
 
 .text-comic{
-  width: 50%;
+  width: 40%;
 }

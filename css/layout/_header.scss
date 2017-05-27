@@ -7,6 +7,12 @@
   align-items: center;
 }
 
+.fixed-header{
+  position: fixed;
+  top: 0;
+  z-index: 0;
+}
+
 .nav{
   width: 600px;
   display: flex;
