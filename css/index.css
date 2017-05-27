@@ -472,11 +472,51 @@ input[type='range']::-webkit-slider-thumb {
   background-color: #f1f8fb; }
 
 .section-img {
-  width: 100%; }
+  width: 100%;
+  position: relative; }
 
 .section-img img {
   width: 100%;
   vertical-align: bottom; }
+
+.author-image {
+  position: absolute;
+  bottom: -25px;
+  right: 10%;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer; }
+
+.author-image-white {
+  position: absolute;
+  bottom: -45px;
+  right: 10%;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.author-image:hover {
+  text-decoration: underline; }
+
+.white-author {
+  color: white;
+  margin: 0 0 2px;
+  text-align: right; }
+
+a.white-author:hover {
+  text-decoration: underline;
+  cursor: pointer; }
 
 .comic-img-text {
   display: -webkit-box;
