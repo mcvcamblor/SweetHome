@@ -331,18 +331,18 @@ input[type='range']::-webkit-slider-thumb {
   background-color: #f1f8fb; }
 
 .interactive-map-section {
-  width: 800px;
+  width: 900px;
   margin: 0 auto;
   position: relative; }
 
-.map-madrid {
-  width: 100%;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s; }
-
 .map-barcelona {
   width: 100%;
-  position: absolute;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  position: absolute; }
+
+.map-madrid {
+  width: 100%;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s; }
 
@@ -352,6 +352,9 @@ input[type='range']::-webkit-slider-thumb {
   z-index: -1; }
 
 .total-map img {
+  width: 100%; }
+
+.interactive-map {
   width: 100%; }
 
 .selection-map {
@@ -405,11 +408,18 @@ input[type='range']::-webkit-slider-thumb {
   outline: 0;
   cursor: pointer; }
 
-.title-home-selector {
-  margin-top: 15px; }
+.label-form {
+  margin: 40px 0 10px;
+  font-size: 12px; }
 
 .home-selector {
-  margin: 2px 0; }
+  margin: 2px 0;
+  font-size: 12px; }
+
+.text-percentage {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 40px; }
 
 .rental-percentage {
   width: 100%;

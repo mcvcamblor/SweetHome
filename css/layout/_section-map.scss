@@ -1,17 +1,17 @@
 .interactive-map-section{
-  width: 800px;
+  width: 900px;
   margin: 0 auto;
   position: relative;
 }
 
-.map-madrid{
-  width: 100%;
-  transition: opacity 0.5s;
-}
-
 .map-barcelona{
   width: 100%;
+  transition: opacity 0.5s;
   position: absolute;
+}
+
+.map-madrid{
+  width: 100%;
   transition: opacity 0.5s;
 }
 
@@ -22,6 +22,10 @@
 }
 
 .total-map img{
+  width: 100%;
+}
+
+.interactive-map{
   width: 100%;
 }
 
@@ -62,12 +66,20 @@
   cursor: pointer;
 }
 
-.title-home-selector{
-  margin-top: 15px;
+.label-form{
+  margin: 40px 0 10px;
+  font-size: 12px;
 }
 
 .home-selector{
   margin: 2px 0;
+  font-size: 12px;
+}
+
+.text-percentage{
+  text-align: center;
+  font-size: 12px;
+  margin-top: 40px;
 }
 
 .rental-percentage{
