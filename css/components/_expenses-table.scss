@@ -63,10 +63,12 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .square{
+  border: 1px solid white;
   width: 25%;
   position: relative;
   transition: transform 1s;
   transform-style: preserve-3d;
+
 }
 
 .square:hover{

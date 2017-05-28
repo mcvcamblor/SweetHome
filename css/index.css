@@ -204,6 +204,7 @@ input[type='range']::-webkit-slider-thumb {
   color: white; }
 
 .square {
+  border: 1px solid white;
   width: 25%;
   position: relative;
   -webkit-transition: -webkit-transform 1s;
@@ -577,6 +578,7 @@ a.white-author:hover {
   width: 78%; }
 
 .icon img {
+  background: none;
   width: 100%; }
 
 .item h3 {
