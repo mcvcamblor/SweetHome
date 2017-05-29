@@ -648,6 +648,10 @@
             </h3>
           </div>
           <h4 class="subtitle-section">¡Haz la prueba!</h4>
+          <!-- He creado un botón provisional para llamar a la función que calcula y
+          pinta los resultados. Luego hay que sustituirlo por un addeventlistener -->
+          <button type="button" name="button" onclick="writeExpenses(calculateExpenses(42, 42))"></button>
+          <!--  -->
           <p class="body-text">
             Lorem ipsum dolor sit amet, consectetur adipisicing
             elit.
@@ -656,25 +660,27 @@
             <div class="range-selector">
               <div class="salary">
                 <label for="salary-range" class="label-salary-rental">Tu salario mensual neto</label>
-                <input type="range" name="salary-range" value="" class="salary-range">
+                <input type="range" name="salary-range" min="600" max="4000" value="1200" class="salary-range">
               </div>
               <div class="rental">
                 <label for="rental-range" class="label-salary-rental">Lo que gastas en alquiler</label>
-                <input type="range" name="rental-range" value="" class="rental-range">
+                <input type="range" name="rental-range" min="192" max="1280" value="400" class="rental-range">
               </div>
 
             </div>
+
             <div class="expenses-table">
               <div class="square">
                 <div class="frontSide">
                   <div class="square-img">
                     <img src="img/iconos-logos/gastoSalario/alimentacion.svg" alt="alimentación">
                   </div>
-                  <p class="euros">€</p>
+                  <p ></<p>
+                  <p class="euros" id="alimentacionMoneyValue">€</p>
                 </div>
                 <div class="backSide">
                   <p>Alimentación</p>
-                  <p class="percent">%</p>
+                  <p class="percent" id="alimentacionPercentValue">%</p>
                 </div>
               </div>
 
@@ -683,11 +689,11 @@
                   <div class="square-img">
                     <img src="img/iconos-logos/gastoSalario/ropa-calzado.svg" alt="">
                   </div>
-                  <p class="euros">€</p>
+                  <p class="euros" id="ropaMoneyValue">€</p>
                 </div>
                 <div class="backSide">
                   <p>Ropa y calzado</p>
-                  <p class="percent">%</p>
+                  <p class="percent" id="ropaPercentValue">%</p>
                 </div>
               </div>
 
@@ -696,11 +702,11 @@
                   <div class="square-img">
                     <img src="img/iconos-logos/gastoSalario/transporte.svg" alt="icono de transportes">
                   </div>
-                  <p class="euros">€</p>
+                  <p class="euros" id="transporteMoneyValue">€</p>
                 </div>
                 <div class="backSide">
                   <p>Transporte</p>
-                  <p class="percent">%</p>
+                  <p class="percent" id="transportePercentValue">%</p>
                 </div>
               </div>
 
@@ -709,11 +715,11 @@
                   <div class="square-img">
                     <img src="img/iconos-logos/gastoSalario/salud.svg" alt="">
                   </div>
-                  <p class="euros">€</p>
+                  <p class="euros" id="saludMoneyValue">€</p>
                 </div>
                 <div class="backSide">
                   <p>Salud</p>
-                  <p class="percent">%</p>
+                  <p class="percent" id="saludPercentValue">%</p>
                 </div>
               </div>
 
@@ -723,12 +729,12 @@
                     <img src="img/iconos-logos/gastoSalario/gastos-hogar.svg" alt="">
                   </div>
 
-                  <p class="euros">€</p>
+                  <p class="euros" id="hogarMoneyValue">€</p>
                 </div>
 
                 <div class="backSide">
                   <p>Gastos hogar</p>
-                  <p class="percent">%</p>
+                  <p class="percent" id="hogarPercentValue">%</p>
                 </div>
               </div>
 
@@ -737,13 +743,12 @@
                   <div class="square-img">
                     <img src="img/iconos-logos/gastoSalario/enseñanza.svg" alt="">
                   </div>
-
-                  <p class="euros">€</p>
+                  <p class="euros" id="ensenanzaMoneyValue">€</p>
                 </div>
 
                 <div class="backSide">
                   <p>Enseñanza</p>
-                  <p class="percent">%</p>
+                  <p class="percent" id="ensenanzaPercentValue">%</p>
                 </div>
               </div>
 
@@ -753,12 +758,12 @@
                     <img src="img/iconos-logos/gastoSalario/telecomunicacion.svg" alt="">
                   </div>
 
-                  <p class="euros">€</p>
+                  <p class="euros" id="telecomunicacionMoneyValue">€</p>
                 </div>
 
                 <div class="backSide">
                   <p>Telecomunicaciones</p>
-                  <p class="percent">%</p>
+                  <p class="percent" id="telecomunicacionPercentValue">%</p>
                 </div>
               </div>
 
@@ -768,12 +773,12 @@
                     <img src="img/iconos-logos/gastoSalario/ahorros.svg" alt="">
                   </div>
 
-                  <p class="euros">€</p>
+                  <p class="euros" id="ahorrosMoneyValue">€</p>
                 </div>
 
                 <div class="backSide">
                   <p>Ahorros</p>
-                  <p class="percent">%</p>
+                  <p class="percent" id="ahorrosPercentValue">%</p>
                 </div>
               </div>
 
@@ -783,11 +788,11 @@
                     <img src="img/iconos-logos/gastoSalario/bares-restaurantes.svg" alt="">
                   </div>
 
-                  <p class="euros">€</p>
+                  <p class="euros" id="baresMoneyValue">€</p>
                 </div>
                 <div class="backSide">
                   <p>Bares y restaurantes</p>
-                  <p class="percent">%</p>
+                  <p class="percent" id="baresPercentValue">%</p>
                 </div>
               </div>
 
@@ -796,11 +801,11 @@
                   <div class="square-img">
                     <img src="img/iconos-logos/gastoSalario/ocio-cultura.svg" alt="">
                   </div>
-                  <p class="euros">€</p>
+                  <p class="euros" id="culturaMoneyValue">€</p>
                 </div>
                 <div class="backSide">
                   <p>Ocio y cultura</p>
-                  <p class="percent">%</p>
+                  <p class="percent" id="culturaPercentValue">%</p>
                 </div>
               </div>
 
@@ -809,11 +814,11 @@
                   <div class="square-img">
                     <img src="img/iconos-logos/gastoSalario/alcohol-tabaco.svg" alt="">
                   </div>
-                  <p class="euros">€</p>
+                  <p class="euros" id="tabacoMoneyValue">€</p>
                 </div>
                 <div class="backSide">
                   <p>Alcohol y tabaco</p>
-                  <p class="percent">%</p>
+                  <p class="percent" id="tabacoPercentValue">%</p>
                 </div>
               </div>
 
@@ -822,11 +827,11 @@
                   <div class="square-img">
                     <img src="img/iconos-logos/gastoSalario/otros.svg" alt="">
                   </div>
-                  <p class="euros">€</p>
+                  <p class="euros" id="otrosMoneyValue">€</p>
                 </div>
                 <div class="backSide">
                   <p>Otros</p>
-                  <p class="percent">%</p>
+                  <p class="percent" id="otrosPercentValue">%</p>
                 </div>
               </div>
             </div>
@@ -1219,5 +1224,6 @@
     <script src="scripts/interactive-map.js" charset="utf-8"></script>
     <script src="scripts/scroll-header.js" charset="utf-8"></script>
 
+    <script src="scripts/expensesCalculation.js" charset="utf-8"></script>
   </body>
 </html>
