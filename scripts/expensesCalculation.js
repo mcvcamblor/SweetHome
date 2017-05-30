@@ -107,7 +107,6 @@ function writeExpenses(expenses){
   for (i = 0; i < expensePrefix.length; i++) {
       auxMoney = expensePrefix[i] + 'MoneyValue';
       auxPercent = expensePrefix[i] + 'PercentValue';
-      debugger;
       moneyValue = document.getElementById(auxMoney);
       percentValue = document.getElementById(auxPercent);
       moneyValue.innerHTML = expenses[expensePrefix[i]][0] + '€';
