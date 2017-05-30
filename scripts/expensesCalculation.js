@@ -1,3 +1,38 @@
+document.addEventListener("DOMContentLoaded", function() {
+
+  var salaryRange = document.getElementById('salary-range');
+  var rentalRange = document.getElementById('rental-range');
+  var salary = salaryRange.value;
+  var rental = rentalRange.value;
+
+
+  salaryRange.addEventListener("change", function(e){
+    salary = e.target.value;
+
+    var valueSalaryRange = document.getElementById('value-salary-range');
+    valueSalaryRange.innerHTML = salary + ' euros';
+    writeExpenses(calculateExpenses(salary, rental))
+  });
+
+
+  rentalRange.addEventListener("change", function(e){
+    rental = e.target.value;
+
+    var valueRentalRange = document.getElementById('value-rental-range');
+    valueRentalRange.innerHTML = rental + ' euros';
+    writeExpenses(calculateExpenses(salary, rental))
+  });
+
+
+  writeExpenses(calculateExpenses(salary, rental));
+
+  var valueSalaryRange = document.getElementById('value-salary-range');
+  valueSalaryRange.innerHTML = salary + ' euros';
+  var valueRentalRange = document.getElementById('value-rental-range');
+  valueRentalRange.innerHTML = rental + ' euros';
+});
+
+
 function calculateExpenses(salary, houseRentPercent) {
   //Función provisional para calcular los resultados,
   //pero por ahora devuelve los mismos resultados
@@ -19,43 +54,16 @@ function calculateExpenses(salary, houseRentPercent) {
     // Calculo
     // Porcentaje Ideal
     // 32%
-    tipoYPorcentaje =  {'alimentacion': 13, 'ropa': 4, 'transporte': 11, 'salud': 4, 'hogar': 4,'ensenanza': 1, 'telecomunicacion': 3, 'ahorros': 7, 'bares': 9, 'cultura': 4, 'tabaco': 2, 'otros': 6};
+    tipoYPorcentaje =  {'alimentacion': 13, 'ropa': 4, 'transporte': 11,
+      'salud': 4, 'hogar': 4,'ensenanza': 1, 'telecomunicacion': 3, 'ahorros':
+      7, 'bares': 9, 'cultura': 4, 'tabaco': 2, 'otros': 6};
     var result = {};
     var x = 0;
     var data = null;
+
     for (var key in tipoYPorcentaje) {
       x = ( salary * tipoYPorcentaje[key] ) / 100;
-      // var data = {key: [x, tipoYPorcentaje[key]]};
-      // console.log("data:"+data);
       result[key] = [x, tipoYPorcentaje[key]];
-      console.log("añadimos key:"+key);
-      console.log("añadimos valor:"+result[key]);
-    }
-
-    // La respuesta
-    var expectResult = {'alimentacion': [156, 13],
-     'ropa': [48, 4],
-     'transporte': [132, 11],
-     'salud': [48, 4],
-     'hogar': [48, 4],
-     'ensenanza': [12, 1],
-     'telecomunicacion': [36, 3],
-     'ahorros': [84, 7],
-     'bares': [108, 9],
-     'cultura': [48, 4],
-     'tabaco': [24, 2],
-     'otros': [72, 6]
-    }
-
-
-    console.log("La respuesta esperada");
-    for (var key in expectResult) {
-      console.log("clave:"+key+ " valor:"+expectResult[key]);
-    }
-    console.log("----------");
-    console.log("Lo calculado:");
-    for (var key in result) {
-      console.log("clave:"+key+ " valor:"+result[key]);
     }
     return result;
 
@@ -99,6 +107,7 @@ function writeExpenses(expenses){
   for (i = 0; i < expensePrefix.length; i++) {
       auxMoney = expensePrefix[i] + 'MoneyValue';
       auxPercent = expensePrefix[i] + 'PercentValue';
+      debugger;
       moneyValue = document.getElementById(auxMoney);
       percentValue = document.getElementById(auxPercent);
       moneyValue.innerHTML = expenses[expensePrefix[i]][0] + '€';
