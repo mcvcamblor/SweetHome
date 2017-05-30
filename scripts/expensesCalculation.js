@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var valueSalaryRange = document.getElementById('value-salary-range');
     valueSalaryRange.innerHTML = salary + ' euros';
-    writeExpenses(calculateExpenses(salary, rental))
+    writeExpenses(calculateExpenses(salary, rental));
   });
 
 
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var valueRentalRange = document.getElementById('value-rental-range');
     valueRentalRange.innerHTML = rental + ' euros';
-    writeExpenses(calculateExpenses(salary, rental))
+    writeExpenses(calculateExpenses(salary, rental));
   });
 
 
@@ -100,37 +100,20 @@ function noIdealExpensesPercentCalculation(salary, houseRentPercent){
   return expensesAndPercentsToApply;
 }
 
-function calculateNoIdealExpenses(salary, houseRentPercent){
-  //Función para calcular los gastos cuando se le pasa un salario y un porcentaje destinado
-  //a vivienda "no ideal". Debe llamar a la función noIdealExpensesPercentCalculation para
-  //calcular los porcentajes destinados al resto de gastos, y debe calcular el dinero.
-  //Estos datos se guardan en un diccionario que guarda ambos valores
-  //se llama a la función writeExpenses pasándole el diccionario para que lo pinte en el
-  //cuadro de gastos de la web
-
+function calculateExpenses(salary, rental) {
+  houseRentPercent = (rental * 100)/salary;
+  houseRentPercent = Math.round(houseRentPercent);
   var expensesAndPercentsToApply = noIdealExpensesPercentCalculation(salary, houseRentPercent);
   var result = {};
   var totalPercent = 100;
   var x = 0;
   var value = 0;
+
   for (var key in expensesAndPercentsToApply) {
     value = (salary * expensesAndPercentsToApply[key]) / totalPercent;
     value = Math.round(value);
     result[key] = [value, expensesAndPercentsToApply[key]];
   }
 
-  writeExpenses(result);
-}
-
-function calculateExpenses(salary, houseRentPercent) {
-  var result = {};
-  var value = 0;
-  var totalPercent = 100;
-
-  for (var key in tipoYPorcentaje) {
-    value = (salary * tipoYPorcentaje[key]) / totalPercent;
-    value = Math.round(value);
-    result[key] = [value, tipoYPorcentaje[key]];
-  }
   return result;
 }
