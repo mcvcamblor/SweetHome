@@ -55,6 +55,11 @@ body {
   font-size: 22px;
   font-family: "Roboto Condensed", sans-serif; }
 
+.city-quote {
+  font-size: 10.5px;
+  text-align: center;
+}
+
 .title-map-selector {
   text-align: center;
   font-size: 18px;
