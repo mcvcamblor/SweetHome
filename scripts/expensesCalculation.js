@@ -78,7 +78,7 @@ function writeExpenses(expenses){
     }
 }
 
-function noIdealExpensesPercentCalculation(salary, houseRentPercent, initialTypeAndPercent){
+function noIdealExpensesPercentCalculation(salary, houseRentPercent){
   //Dado un salario, un porcentaje destinado a la vivienda, y los tipos de interés del caso inicial,
   //calculamos los porcentajes destinados al resto de gastos según las fórmulas dadas en el
   //Excel que nos han proporcionado en MediaLab Prado a través de Flora.
@@ -94,9 +94,10 @@ function noIdealExpensesPercentCalculation(salary, houseRentPercent, initialType
   for (var key in initialTypeAndPercent) {
     value = initialTypeAndPercent[key];
     x = (value * remainderPercent) / idealRemainderPercent;
-    expensesAndPercentsToApply[key] = [key, x];
+    x = Math.round(x);
+    expensesAndPercentsToApply[key] =  x;
   }
-  return expensesAndPercentsToApply, salary;
+  return expensesAndPercentsToApply;
 }
 
 function calculateNoIdealExpenses(salary, houseRentPercent){
@@ -113,11 +114,11 @@ function calculateNoIdealExpenses(salary, houseRentPercent){
   var x = 0;
   var value = 0;
   for (var key in expensesAndPercentsToApply) {
-    console.log(expensesAndPercentsToApply[key]);
     value = (salary * expensesAndPercentsToApply[key]) / totalPercent;
-    console.log(value);
+    value = Math.round(value);
     result[key] = [value, expensesAndPercentsToApply[key]];
   }
+
   writeExpenses(result);
 }
 
@@ -128,6 +129,7 @@ function calculateExpenses(salary, houseRentPercent) {
 
   for (var key in tipoYPorcentaje) {
     value = (salary * tipoYPorcentaje[key]) / totalPercent;
+    value = Math.round(value);
     result[key] = [value, tipoYPorcentaje[key]];
   }
   return result;
