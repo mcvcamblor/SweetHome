@@ -32,58 +32,21 @@ document.addEventListener("DOMContentLoaded", function() {
   valueRentalRange.innerHTML = rental + ' euros';
 });
 
-
-function calculateExpenses(salary, houseRentPercent) {
-  //Función provisional para calcular los resultados,
-  //pero por ahora devuelve los mismos resultados
-  // return {'alimentacion': [42, 42],
-  //         'ropa': [42, 42],
-  //         'transporte': [42, 42],
-  //         'salud': [42, 42],
-  //         'hogar': [42, 42],
-  //         'ensenanza': [42, 42],
-  //         'telecomunicacion': [42, 42],
-  //         'ahorros': [42, 42],
-  //         'bares': [42, 42],
-  //         'cultura': [42, 42],
-  //         'tabaco': [42, 42],
-  //         'otros': [42, 42]
-  //       }
-
-    // EJEMPLO DE CALCULO
-    // Calculo
-    // Porcentaje Ideal
-    // 32%
-    tipoYPorcentaje =  {'alimentacion': 13, 'ropa': 4, 'transporte': 11,
-      'salud': 4, 'hogar': 4,'ensenanza': 1, 'telecomunicacion': 3, 'ahorros':
-      7, 'bares': 9, 'cultura': 4, 'tabaco': 2, 'otros': 6};
-    var result = {};
-    var x = 0;
-    var data = null;
-
-    for (var key in tipoYPorcentaje) {
-      x = ( salary * tipoYPorcentaje[key] ) / 100;
-      result[key] = [x, tipoYPorcentaje[key]];
-    }
-    return result;
-
-    // EJEMPLO DE CALCULO
-    // Calculo
-    // Porcentaje 40%
-    // ¿Qué me cambia? => el % de tipoYPorcentaje
-    // Hay que calcularlo, lo hacemos en otra function
-    // function calculoPorcentajesGastosNoIdeales(salary, houseRentPercent, tipoYPorcentajeInicial)
-    //  var tipoYPorcentajeInicial =  {'alimentacion': 13, 'ropa': 4, 'transporte': 11, 'salud': 4, 'hogar': 4,'ensenanza': 1, 'telecomunicacion': 3, 'ahorros': 7, 'bares': 9, 'cultura': 4, 'tabaco': 2, 'otros': 6};
-    //  Hacer dentro de la function
-    //  Calcular el Resto => 100 - houseRentPercent
-    //
-    //  Por cada key de tipoYPorcentajeInicial
-    //  (tipoYPorcentajeInicial[key] * Resto) / RestoPorcentajeIdeal
-    //
-    // Esta funcion tiene que devolvernos los % a usar
-    // Ejemplo: tipoYPorcentaje =  {'alimentacion': 13, 'ropa': 4, 'transporte': 11, 'salud': 4, 'hogar': 4,'ensenanza': 1, 'telecomunicacion': 3, 'ahorros': 7, 'bares': 9, 'cultura': 4, 'tabaco': 2, 'otros': 6};
-
-}
+//----------------------------------------------------
+var tipoYPorcentaje = {
+    'alimentacion': 13,
+    'ropa': 4,
+    'transporte': 11,
+    'salud': 4,
+    'hogar': 4,
+    'ensenanza': 1,
+    'telecomunicacion': 3,
+    'ahorros': 7,
+    'bares': 9,
+    'cultura': 4,
+    'tabaco': 2,
+    'otros': 6
+};
 
 function writeExpenses(expenses){
   //Función que pinta los resultados en la tabla.
@@ -96,7 +59,8 @@ function writeExpenses(expenses){
   //dinero y el porcentaje calculados:
   //expenses === resultados{nombre} = [valorNumerico, valorPorcentaje]
 
-  expensePrefix = ['alimentacion', 'ropa', 'transporte', 'salud',
+
+  var expensePrefix = ['alimentacion', 'ropa', 'transporte', 'salud',
                    'hogar', 'ensenanza', 'telecomunicacion', 'ahorros',
                    'bares', 'cultura', 'tabaco', 'otros'];
   var moneyValue = null;
@@ -111,5 +75,60 @@ function writeExpenses(expenses){
       percentValue = document.getElementById(auxPercent);
       moneyValue.innerHTML = expenses[expensePrefix[i]][0] + '€';
       percentValue.innerHTML = expenses[expensePrefix[i]][1] + '%';
+    }
+}
+
+function noIdealExpensesPercentCalculation(salary, houseRentPercent, initialTypeAndPercent){
+  //Dado un salario, un porcentaje destinado a la vivienda, y los tipos de interés del caso inicial,
+  //calculamos los porcentajes destinados al resto de gastos según las fórmulas dadas en el
+  //Excel que nos han proporcionado en MediaLab Prado a través de Flora.
+  var initialTypeAndPercent = tipoYPorcentaje;
+  var expensesAndPercentsToApply = {};
+  var totalPercent = 100;
+  var idealHouseRentPercent = 32;
+  var remainderPercent = totalPercent - houseRentPercent;
+  var idealRemainderPercent = totalPercent - idealHouseRentPercent;
+  var x = 0;
+  var value = 0;
+
+  for (var key in initialTypeAndPercent) {
+    value = initialTypeAndPercent[key];
+    x = (value * remainderPercent) / idealRemainderPercent;
+    expensesAndPercentsToApply[key] = [key, x];
   }
+  return expensesAndPercentsToApply, salary;
+}
+
+function calculateNoIdealExpenses(salary, houseRentPercent){
+  //Función para calcular los gastos cuando se le pasa un salario y un porcentaje destinado
+  //a vivienda "no ideal". Debe llamar a la función noIdealExpensesPercentCalculation para
+  //calcular los porcentajes destinados al resto de gastos, y debe calcular el dinero.
+  //Estos datos se guardan en un diccionario que guarda ambos valores
+  //se llama a la función writeExpenses pasándole el diccionario para que lo pinte en el
+  //cuadro de gastos de la web
+
+  var expensesAndPercentsToApply = noIdealExpensesPercentCalculation(salary, houseRentPercent);
+  var result = {};
+  var totalPercent = 100;
+  var x = 0;
+  var value = 0;
+  for (var key in expensesAndPercentsToApply) {
+    console.log(expensesAndPercentsToApply[key]);
+    value = (salary * expensesAndPercentsToApply[key]) / totalPercent;
+    console.log(value);
+    result[key] = [value, expensesAndPercentsToApply[key]];
+  }
+  writeExpenses(result);
+}
+
+function calculateExpenses(salary, houseRentPercent) {
+  var result = {};
+  var value = 0;
+  var totalPercent = 100;
+
+  for (var key in tipoYPorcentaje) {
+    value = (salary * tipoYPorcentaje[key]) / totalPercent;
+    result[key] = [value, tipoYPorcentaje[key]];
+  }
+  return result;
 }
