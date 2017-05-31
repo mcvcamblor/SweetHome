@@ -9,7 +9,8 @@ a {
   text-decoration: none; }
 
 body {
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5; }
 
 .text-hero {
   font-family: "Roboto Condensed", sans-serif;
@@ -54,11 +55,6 @@ body {
 .subtitle-section {
   font-size: 22px;
   font-family: "Roboto Condensed", sans-serif; }
-
-.city-quote {
-  font-size: 10.5px;
-  text-align: center;
-}
 
 .title-map-selector {
   text-align: center;
@@ -168,12 +164,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
-
-.range-slider {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
 
 .label-salary-rental {
   margin-bottom: 5px;
