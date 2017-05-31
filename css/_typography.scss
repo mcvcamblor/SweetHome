@@ -5,7 +5,7 @@ body{
 
 .text-hero{
   font-family: $secondary-typography;
-  color: white;
+  color: $color-light;
 }
 
 .title-hero{
@@ -80,7 +80,7 @@ body{
 }
 
 .appreciation{
-  color: white;
+  color: $color-light;
 }
 
 .text-medialab-footer{
