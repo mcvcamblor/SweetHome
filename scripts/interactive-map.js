@@ -14,19 +14,19 @@ document.addEventListener("DOMContentLoaded", function() {
   function changeMapMadrid(){
     buttonMadrid.classList.add("btn-focus");
     buttonBarcelona.classList.remove("btn-focus");
-    mapMadrid.classList.add("on");
-    mapBarcelona.classList.add("off");
-    mapMadrid.classList.remove("off");
-    mapBarcelona.classList.remove("on");
+    mapMadrid.classList.add("show");
+    mapBarcelona.classList.add("hide");
+    mapMadrid.classList.remove("hide");
+    mapBarcelona.classList.remove("show");
   }
 
   function changeMapBarcelona(){
     buttonBarcelona.classList.add("btn-focus");
     buttonMadrid.classList.remove("btn-focus");
-    mapMadrid.classList.add("off");
-    mapBarcelona.classList.add("on");
-    mapMadrid.classList.remove("on");
-    mapBarcelona.classList.remove("off");
+    mapMadrid.classList.add("hide");
+    mapBarcelona.classList.add("show");
+    mapMadrid.classList.remove("show");
+    mapBarcelona.classList.remove("hide");
   }
 
   buttonMadrid.addEventListener("click", changeMapMadrid);
