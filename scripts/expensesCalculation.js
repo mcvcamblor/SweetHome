@@ -1,5 +1,3 @@
-'use strict';
-
 document.addEventListener("DOMContentLoaded", function() {
 
   var salaryRange = document.getElementById('salary-range');
