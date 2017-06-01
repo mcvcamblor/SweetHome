@@ -29,8 +29,8 @@
     <header class="header">
       <ul class="nav uppercase">
         <li><a class="nav-item" href="#introduccion">1 Introducción</a></li>
-        <li><a class="nav-item" href="#">2 Razones</a></li>
-        <li><a class="nav-item" href="#">3 Resolver</a></li>
+        <li><a class="nav-item" href="#razones">2 Razones</a></li>
+        <li><a class="nav-item" href="#resolver">3 Resolver</a></li>
       </ul>
     </header>
 
@@ -38,8 +38,9 @@
       <div class="section-text-space section-one">
         <div class="section-text">
           <div class="format-title-chapter">
+            <div id="introduccion" class="anchor-point"></div>
             <div class="orange-rectangle"></div>
-            <h2 class="uppercase title-chapter"><a name="introduccion">1 | Introducción</a></h2>
+            <h2 class="uppercase title-chapter">1 | Introducción</h2>
           </div>
           <p class="body-text">
             Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -511,15 +512,23 @@
               <button class="btn-city btn-madrid" type="button" name="button">Madrid</button>
               <button class="btn-city btn-barcelona btn-focus" type="button" name="button">Barcelona</button>
             </div>
+
             <label class="title-home-selector label-form" for="radio-group">¿Quieres vivir sólo o compartir?</label>
-            <p class="home-selector"><input type="radio" name="radio-group">Solo</p>
-            <p class="home-selector"><input type="radio" name="radio-group">Compartir</p>
+
+            <input id="solo" type="radio" name="radio-group"><label for="solo" class="home-selector">Solo</label>
+
+            <input id="share" type="radio" name="radio-group"><label for="share" class="home-selector">Compartir</label>
+
             <label class="label-form" for="range-money">¿Cuánto cobras al mes?</label>
+
             <input class="range-one" name="range-money" type="range" value="1200" min="600" max="2400">
+
             <label class="label-form" for="range-meters">¿Qué tamaño de apartamento quieres?</label>
             <input type="range" name="range-meters" value="45" min="10" max="200">
+
             <label class="label-form" for="range-time">Viaja en el tiempo y observa los cambios</label>
             <input type="range" name="range-time" value="2017" list="tickmarks">
+
             <datalist id="tickmarks">
               <option value="2010" label="2010">
               <option value="2011" label="2011">
@@ -530,6 +539,7 @@
               <option value="2016" label="2016">
               <option value="2017" label="2017">
             </datalist>
+
           </div>
           <p class="text-percentage">Porcentaje de suelo dedicado al alquiler:</p>
           <div class="rental-percentage">
@@ -849,6 +859,7 @@
       <div class="section-text-space section-four">
         <div class="section-text">
           <div class="format-title-chapter">
+            <div id="razones" class="anchor-point"></div>
             <div class="orange-rectangle"></div>
             <h2 class="uppercase title-chapter">2 | Cómo explicar la situación</h2>
           </div>
@@ -979,6 +990,7 @@
       <div class="section-text-space section-six">
         <div class="section-text">
           <div class="format-title-chapter">
+            <div id="resolver" class="anchor-point"></div>
             <div class="orange-rectangle"></div>
             <h2 class="uppercase title-chapter">3 | Regular para resolver</h2>
           </div>
