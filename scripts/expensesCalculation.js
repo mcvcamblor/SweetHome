@@ -1,3 +1,5 @@
+'use strict';
+
 document.addEventListener("DOMContentLoaded", function() {
 
   var salaryRange = document.getElementById('salary-range');
@@ -79,9 +81,10 @@ function writeExpenses(expenses){
 }
 
 function noIdealExpensesPercentCalculation(salary, houseRentPercent){
-  //Dado un salario, un porcentaje destinado a la vivienda, y los tipos de interés del caso inicial,
-  //calculamos los porcentajes destinados al resto de gastos según las fórmulas dadas en el
-  //Excel que nos han proporcionado en MediaLab Prado a través de Flora.
+  //Dado un salario, un porcentaje destinado a la vivienda, y los tipos de
+  //interés del caso inicial, calculamos los porcentajes destinados al resto de
+  //gastos según las fórmulas dadas en el Excel que nos han proporcionado en
+  //MediaLab Prado a través de Flora.
   var initialTypeAndPercent = tipoYPorcentaje;
   var expensesAndPercentsToApply = {};
   var totalPercent = 100;
@@ -101,12 +104,15 @@ function noIdealExpensesPercentCalculation(salary, houseRentPercent){
 }
 
 function calculateExpenses(salary, rental) {
+  //Dado un salario y el dinero destinado al alquiler de la vivienda, obtenems
+  //el dinero y su porcentaje, con respecto al sueldo, destinado a cada gasto,
+  //según las fórmulas del Excel que nos han proporcionado en MediaLab Prado a
+  //través de Flora.
   houseRentPercent = (rental * 100)/salary;
   houseRentPercent = Math.round(houseRentPercent);
   var expensesAndPercentsToApply = noIdealExpensesPercentCalculation(salary, houseRentPercent);
   var result = {};
   var totalPercent = 100;
-  var x = 0;
   var value = 0;
 
   for (var key in expensesAndPercentsToApply) {
@@ -114,6 +120,5 @@ function calculateExpenses(salary, rental) {
     value = Math.round(value);
     result[key] = [value, expensesAndPercentsToApply[key]];
   }
-
   return result;
 }
