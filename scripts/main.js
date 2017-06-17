@@ -101,7 +101,7 @@ function popUp(f,l){
 
 
 $(document).ready(function(){
-  $.getJSON("http://jsonip.com/?callback=?", function (data) {
+  $.getJSON("https://jsonip.com/?callback=?", function (data) {
     var ip = data.ip;
     $.getJSON("https://freegeoip.net/json/" + ip, function (data) {
       current_city = data.city;
