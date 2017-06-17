@@ -103,6 +103,7 @@ function popUp(f,l){
 
 $(document).ready(function(){
   mymap = L.map('map');
+  mymap.scrollWheelZoom.disable();
 
 
   // create the tile layer with correct attribution
