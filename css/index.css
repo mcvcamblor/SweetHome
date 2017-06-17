@@ -228,11 +228,6 @@ input[type='range']::-webkit-slider-thumb {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d; }
 
-.square:hover {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  cursor: pointer; }
-
 .frontSide {
   width: 100%;
   height: 150px;
