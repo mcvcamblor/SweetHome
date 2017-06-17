@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#">
 
   <head>
     <meta charset="utf-8">
-    <title>DIME CUÁNTO COBRAS Y TE DIRÉ DÓNDE VIVIR</title>
+    <title>Dime cuánto cobras y te diré dónde vivir</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" type="image/png" href="img/iconos-logos/fav-icon.png" />
 
@@ -17,6 +17,20 @@
     <style>
       #map{ width: 950px; height: 800px; }
     </style>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@medialab">
+    <meta name="twitter:creator" content="@florafosset">
+    <meta name="twitter:title" content="Dime cuánto cobras y te diré dónde vivir">
+    <meta name="twitter:description" content="¿Aún es posible alquilar piso en Madrid y Barcelona sin arruinarse? Haz la prueba en http://bit.ly/dimecuantocobras">
+    <meta name="twitter:image" content="https://ffosset.github.io/dime-cuanto-cobras/img/pared-se-alquila.jpg">
+
+    <meta property="og:title" content="Dime cuánto cobras y te diré dónde vivir" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://ffosset.github.io/dime-cuanto-cobras/" />
+    <meta property="og:image" content="https://ffosset.github.io/dime-cuanto-cobras/img/pared-se-alquila.jpg" />
+    <meta property="og:description" content="¿Aún es posible alquilar piso en Madrid y Barcelona sin arruinarse? Haz la prueba en http://bit.ly/dimecuantocobras">
+
 
   </head>
 
@@ -113,12 +127,13 @@
 
             <input id="share" type="radio" name="radio-group"><label for="share" class="home-selector">Compartir</label>
 
-            <label class="label-form" for="range-money">¿Cuánto cobras al mes? <span id="map-salary-value"></span></label>
+            <label class="label-form" for="range-money">¿Cuánto cobras al mes? <br> <span id="map-salary-value"></span></label>
 
-            <input class="range-one" name="range-money" type="range" value="1200" min="600" max="2400" id='map-salary'>
+            <input class="range-one" name="range-money" type="range" value="1200" min="600" max="2400" step="100" id='map-salary'>
 
-            <label class="label-form" for="range-meters">¿Qué tamaño de apartamento quieres? <span id="map-apartment-size-value"></span></label>
-            <input type="range" name="range-meters" value="45" min="10" max="200" id="map-apartment-size">
+
+            <label class="label-form" for="range-meters">¿Qué tamaño de apartamento quieres? <br> <span id="map-apartment-size-value"></span></label>
+            <input type="range" name="range-meters" value="45" min="10" max="200" step="5" id="map-apartment-size">
 
             <label class="label-form" for="range-time">Viaja en el tiempo y observa los cambios</label>
             <input type="range" name="range-time" value="2017" list="tickmarks">
@@ -229,7 +244,7 @@
             <div class="range-selector">
               <div class="salary">
                 <label for="salary-range" class="label-salary-rental">Tu salario mensual neto: <span id="value-salary-range"></span></label>
-                <input id="salary-range" type="range" name="salary-range" min="600" max="3000" value="1200" class="salary-range">
+                <input id="salary-range" type="range" name="salary-range" min="600" max="3000" step="100" value="1200" class="salary-range">
                 <div class="range-slider">
                   <span class="range-slider__value">600</span>
                   <span class="range-slider__value">3000</span>
@@ -238,7 +253,7 @@
 
               <div class="rental">
                 <label for="rental-range" class="label-salary-rental">Lo que gastas en alquiler: <span id="value-rental-range"></span></label>
-                <input id="rental-range"type="range" name="rental-range" min="192" max="1280" value="400" class="rental-range">
+                <input id="rental-range"type="range" name="rental-range" min="192" max="1280" step="20" value="400" class="rental-range">
                 <div class="range-slider">
                   <span class="range-slider__value">192</span>
                   <span class="range-slider__value">1280</span>
@@ -583,10 +598,10 @@
           <div class="wrap">
             <div class="item">
               <div class="icon">
-                <img src="img/cities/amsterdam-color-new.png" alt="Icono Ciudad">
+                <img src="img/cities/londres.png" alt="Icono Ciudad">
               </div>
               <div class="text">
-                <h3 class="subtitle-section">AMSTERDAM</h3>
+                <h3 class="subtitle-section">LONDRES</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -597,10 +612,10 @@
             </div>
             <div class="item">
               <div class="icon icon-right">
-                <img src="img/cities/sanfrancisco-color-new.png" alt="Icono Ciudad">
+                <img src="img/cities/copenhague.png" alt="Icono Ciudad">
               </div>
               <div class="text text-left">
-                <h3 class="subtitle-section">SAN FRANCISCO</h3>
+                <h3 class="subtitle-section">COPENHAGUE</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -640,7 +655,7 @@
           </div>
         </div>
         <p class="city-quote">Los iconos de las ciudades han sido realizados por
-          <a href="https://thenounproject.com/prosymbols/collection/world-top-cities-line-icons/">ProSymbols</a>
+          <a href="https://thenounproject.com/prosymbols/collection/world-top-cities-line-icons/" target="_blank">ProSymbols</a>
           de The Noun Project y adaptados por el equipo para el proyecto.
         </p>
 
@@ -699,7 +714,7 @@
         <p class="text-share-one bold">¿Te ha gustado este proyecto?</p>
         <p class="text-share-two">Ayúdanos a difundirlo y compartelo en redes sociales</p>
         <div class="icons-media">
-          <a href="http://www.facebook.com/sharer.php?u=https://adalab.github.io/SweetHome" target="_blank">
+          <a href="https://www.facebook.com/sharer.php?u=https://ffosset.github.io/dime-cuanto-cobras/" target="_blank">
             <?xml version="1.0" encoding="utf-8"?>
             <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 113.4 113.4" style="enable-background:new 0 0 113.4 113.4;" xml:space="preserve">
@@ -711,7 +726,7 @@
               </g>
             </svg>
           </a>
-           <a href="https://twitter.com/share?url=https://adalab.github.io/SweetHome&amp;text=%C2%BFD%C3%B3nde%20te%20puedes%20permitir%20alquilar%20un%20piso%20en%20Madrid%20y%20Barcelona?%20Haz%20la%20prueba%20en%20&amp;hashtags=tppd17" target="_blank">
+           <a href="https://twitter.com/share?url=https://ffosset.github.io/dime-cuanto-cobras/&amp;text=%C2%BFD%C3%B3nde%20te%20puedes%20permitir%20alquilar%20un%20piso%20en%20Madrid%20y%20Barcelona?%20Haz%20la%20prueba%20en%20&amp;hashtags=tppd17" target="_blank">
             <?xml version="1.0" encoding="utf-8"?>
             <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -728,7 +743,7 @@
               </g>
             </svg>
           </a>
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://adalab.github.io/SweetHome" target="_blank">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://ffosset.github.io/dime-cuanto-cobras/" target="_blank">
             <?xml version="1.0" encoding="utf-8"?>
             <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -747,7 +762,7 @@
               </g>
             </svg>
           </a>
-          <a href="https://plus.google.com/share?url=https://adalab.github.io/SweetHome" target="_blank">
+          <a href="https://plus.google.com/share?url=https://ffosset.github.io/dime-cuanto-cobras/" target="_blank">
             <?xml version="1.0" encoding="utf-8"?>
             <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -771,20 +786,19 @@
         <div class="appreciation section-text">
           <div class="team">
             <p class="bold">EQUIPO</p>
-            <p><a href="http://www.amiedes.com/" class="team-link bold" target="_blank">Alberto Miedes</a> desarrollador</p>
-            <p><a href="https://tresletras.wordpress.com/" class="team-link bold" target="_blank">Ana Torres</a> periodista</p>
-            <p><a href="http://fosset.co/" class="team-link bold" target="_blank">Flora Fosset</a> periodista y diseño</p>
-            <p><a class="bold">Graeme Herbert</a> geógrafo</p>
-            <p><a href="https://www.linkedin.com/in/maria-luisa-oca%C3%B1a-6a9103a/" class="team-link bold" target="_blank">María Luisa Ocaña</a> periodista</p>
-            <p><a href="https://twitter.com/matinteg?lang=fr" class="team-link bold" target="_blank">Miguel Tinte</a> desarrollador</p>
+            <p><a href="https://tresletras.wordpress.com/" class="team-link bold" target="_blank">Ana Torres</a> texto</p>
+            <p><a href="http://fosset.co/" class="team-link bold" target="_blank">Flora Fosset</a> diseño</p>
+            <p><a class="bold">Graeme Herbert</a> mapa</p>
+            <p><a href="https://www.linkedin.com/in/maria-luisa-oca%C3%B1a-6a9103a/" class="team-link bold" target="_blank">María Luisa Ocaña</a> texto</p>
+            <p><a href="https://twitter.com/matinteg?lang=fr" class="team-link bold" target="_blank">Miguel Tinte</a> datos</p>
           </div>
           <div class="greetings">
             <p><strong>AGRADECIMIENTOS</strong></p>
              <p>
-               <a href="http://visualizados.com/" class="team-link bold" target="_blank"> Beatriz Martínez</a>,
                <a href="https://twitter.com/ferblape" class="team-link bold" target="_blank"> Fernando Blat</a>,
-               <a href="https://twitter.com/nachotronic" class="team-link bold" target="_blank"> Nacho García</a>,
                <a href="https://twitter.com/paucc" class="team-link bold" target="_blank"> Pau Valiente</a>,
+               <a href="https://twitter.com/nachotronic" class="team-link bold" target="_blank"> Nacho García</a>,
+               <a href="http://visualizados.com/" class="team-link bold" target="_blank"> Beatriz Martínez</a>,
                <a href="https://twitter.com/nicolasperezi" class="team-link bold" target="_blank"> Nicolas Pérez Iguarán</a>,
                <a href="http://www.rafadelascuevas.com/" class="team-link bold" target="_blank"> Rafa de las Cuevas</a>,
                <a href="https://twitter.com/adolflow" class="team-link bold" target="_blank"> Adolfo Antón Bravo</a>,
@@ -820,7 +834,6 @@
     <script src="scripts/leaflet-sidebar.js"></script>
     <script src="scripts/jquery-3.2.1.min.js"></script>
     <script src="scripts/main.js"></script>
-    <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
     <script src="scripts/expensesCalculation.js" charset="utf-8"></script>
     <script src="scripts/scroll-header.js" charset="utf-8"></script>
   </body>
