@@ -105,6 +105,8 @@ $(document).ready(function(){
     var ip = data.ip;
     $.getJSON("https://freegeoip.net/json/" + ip, function (data) {
       current_city = data.city;
+      if(current_city !== 'Madrid' && current_city !== 'Barcelona')
+        current_city = 'Madrid';
       mymap = L.map('map');
       mymap.scrollWheelZoom.disable();
 
