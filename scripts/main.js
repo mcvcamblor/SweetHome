@@ -140,10 +140,12 @@ $(document).ready(function(){
         changeCurrentCity('Barcelona');
       });
 
+      $('#map-salary-value').html($('#map-salary').val() + ' €');
+      $('#map-apartment-size-value').html($('#map-apartment-size').val() + ' m2');
 
-      $('.selection-map input[type="range"]').on('change', function(){
-        $('#map-salary-value').html($('#map-salary').val());
-        $('#map-apartment-size-value').html($('#map-apartment-size').val());
+      $('.selection-map input[type="range"]').on('input change', function(){
+        $('#map-salary-value').html($('#map-salary').val() + ' €');
+        $('#map-apartment-size-value').html($('#map-apartment-size').val() + ' m2');
         changeCurrentCity(current_city);
       });
     });
