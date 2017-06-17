@@ -8,12 +8,11 @@ var def_style = {
 };
 
 var mymap;
-var current_city = 'Barcelona';
+var current_city;
 var cityLookup = {
 		    'Madrid':[40.45, -3.76, 11],
 		    'Barcelona':[41.4, 2.08, 12]
 };
-
 
 function calculateColor(percentage) {
   if(percentage > 50) {
@@ -54,7 +53,7 @@ function dynamicStyle(feature) {
 
 var current_year = '2016';
 var jsonLayer = new L.GeoJSON.AJAX(["data/BarcelonaDistrictsDatosIdealista.geojson", "data/MadridDistrictsDatosIdealista.geojson"],{
-  filter:setByCity,
+  filter: setByCity,
   onEachFeature: popUp,
   style: dynamicStyle
 });
@@ -102,65 +101,53 @@ function popUp(f,l){
 
 
 $(document).ready(function(){
-  mymap = L.map('map');
-  mymap.scrollWheelZoom.disable();
+  $.getJSON("https://jsonip.com/?callback=?", function (data) {
+    var ip = data.ip;
+    $.getJSON("https://freegeoip.net/json/" + ip, function (data) {
+      current_city = data.city;
+      if(current_city !== 'Madrid' && current_city !== 'Barcelona')
+        current_city = 'Madrid';
+      mymap = L.map('map');
+      mymap.scrollWheelZoom.disable();
 
 
-  // create the tile layer with correct attribution
-  var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    minZoom: 4,
-    maxZoom: 12,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      // create the tile layer with correct attribution
+      var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        minZoom: 4,
+        maxZoom: 12,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      });
+
+      mymap.setView(new L.LatLng(cityLookup[current_city][0], cityLookup[current_city][1]),cityLookup[current_city][2]);
+      mymap.addLayer(osm);
+
+      mymap.addLayer(jsonLayer);
+      // set the zoom limits for the map
+      mymap.options.maxZoom = 15;
+      mymap.options.minZoom = 6;
+
+      changeCurrentCity(current_city);
+
+      $('.btn-madrid').on('click', function(){
+        $('.btn-barcelona').removeClass('btn-focus');
+        $(this).addClass('btn-focus');
+        changeCurrentCity('Madrid');
+      });
+
+      $('.btn-barcelona').on('click', function(){
+        $('.btn-madrid').removeClass('btn-focus');
+        $(this).addClass('btn-focus');
+        changeCurrentCity('Barcelona');
+      });
+
+      $('#map-salary-value').html($('#map-salary').val() + ' €');
+      $('#map-apartment-size-value').html($('#map-apartment-size').val() + ' m2');
+
+      $('.selection-map input[type="range"]').on('input change', function(){
+        $('#map-salary-value').html($('#map-salary').val() + ' €');
+        $('#map-apartment-size-value').html($('#map-apartment-size').val() + ' m2');
+        changeCurrentCity(current_city);
+      });
+    });
   });
-
-  mymap.setView(new L.LatLng(cityLookup[current_city][0], cityLookup[current_city][1]),cityLookup[current_city][2]);
-  mymap.addLayer(osm);
-
-  mymap.addLayer(jsonLayer);
-  // set the zoom limits for the map
-  mymap.options.maxZoom = 15;
-  mymap.options.minZoom = 6;
-
-  $('.btn-madrid').on('click', function(){
-    $('.btn-barcelona').removeClass('btn-focus');
-    $(this).addClass('btn-focus');
-    changeCurrentCity('Madrid');
-  });
-
-  $('.btn-barcelona').on('click', function(){
-    $('.btn-madrid').removeClass('btn-focus');
-    $(this).addClass('btn-focus');
-    changeCurrentCity('Barcelona');
-  });
-
-
-  $('.selection-map input[type="range"]').on('change', function(){
-    $('#map-salary-value').html($('#map-salary').val());
-    $('#map-apartment-size-value').html($('#map-apartment-size').val());
-    changeCurrentCity(current_city);
-  });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
-
-
-
-
